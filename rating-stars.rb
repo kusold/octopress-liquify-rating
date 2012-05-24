@@ -7,13 +7,18 @@ module Jekyll
     end
 
     def render(context)
-      @css = "<style type="text/css">
+      @size = @stars * 20
+      html_output_for(@size)
+    end
+
+    def html_output_for (size)
+      "<style type='text/css'>
         .star-rating-wrap{
           white-space:nowrap;
         }
         .star-rating,
         .star-rating div.current-rating{
-          background: url(star.gif) left -1000px repeat-x;
+          background: url(https://github.com/Kusold/octopress-liquify-rating/raw/master/star.gif) left -1000px repeat-x;
         }
         .star-rating{
           position:relative;
@@ -46,14 +51,14 @@ module Jekyll
         }
         .star-rating div.current-rating{
           z-index:1;
-          background-image: url(star.gif) !important;
+          background-image: url(https://github.com/Kusold/octopress-liquify-rating/raw/master/star.gif) !important;
           background-position: left bottom !important;
         }
-</style>"
-      @html = "<div class="star-rating" style='width: 50px;'>
-               <div class="current-rating" style='{@stars * 20}px;'>"
+      </style>
+      <div class='star-rating' style='width: 50px;'>
+      <div class='current-rating' style='{size}px;'>"
     end
   end
 end
 
-Liquid::Template.register_tag('rating', Jekyll::TweetTag)
+Liquid::Template.register_tag('rating', Jekyll::RatingStars)
