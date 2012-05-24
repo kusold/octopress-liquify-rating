@@ -8,3 +8,6 @@ This plugin is used to generate 0-5 stars. You can make partial stars, but I onl
 
 ### Usage ###
     {% rating #.# %}
+
+### Credit ###
+This code is strongly based around how KomodoMedia tackled a similar problem in their [blog post](http://www.komodomedia.com/blog/2006/01/css-star-rating-part-deux/)
