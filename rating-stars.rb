@@ -56,7 +56,9 @@ div.star-rating div.current-rating{
 }
 </style>
 <div class='star-rating' style='width: 50px;'>
-<div class='current-rating' style='{size}px;'>"
+<div class='current-rating' style='{size}px;'>
+</div>
+</div>"
     end
   end
 end
